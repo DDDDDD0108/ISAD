@@ -115,7 +115,7 @@ git diff --check
 | 王天岑 | — |
 | 王语嫣 | — |
 | 杨纯淳 | — |
-| 邢杜鑫 |[DDDDDD0108]https://github.com/DDDDDD0108|
+| 邢杜鑫 |[DDDDDD0108](https://github.com/DDDDDD0108)|
 | 周爱凡 | — |
 | 林玮辰 | — |
 | 李可玥 | — |
