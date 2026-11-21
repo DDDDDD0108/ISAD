@@ -501,6 +501,21 @@
       <p><b>交付：</b>对比「自建工具 vs 调用平台连接器 / API」，录屏总结集成成本、数据权限与维护责任。</p>
     </div>
 
+    <h3 class="exp-h">🏛️ 名校对标进阶实验（选做，含操作要点与范例）</h3>
+    <div class="expext">
+      <h4>进阶实验 · “适度规模方案”选型与跨组可行性听证<span class="tag">CMU 67-373 · Berkeley CS169</span></h4>
+      <p><b>目标：</b>避免“为用 AI 而用 AI”的过度设计（Over-engineering），学会站在真实客户/资助方视角为技术方案辩护。</p>
+      <p><b>任务：</b>为你的贯穿项目设计两套备选方案（方案 A：零代码 Coze + 托管知识库；方案 B：自建后端 + 开源 RAG + API），从技术、经济、操作、法律四维度对比后选定“适度规模方案（Right-sized Solution）”；随后与邻组互换扮演“甲方评审团”，向对方立项书提出至少 3 条可行性质疑并记录回应。</p>
+      <p><b>交付：</b>双方案对比矩阵 + 甲方质疑与回应纪要（1 页）。</p>
+      <details class="fold">
+        <summary>🛠 操作要点与参考范例</summary>
+        <p><b>操作要点：</b>① 评估“团队当前技能 + 17 周课内工时”能否支撑所选方案（CMU 67-373 核心准则）；② 质疑必须具体到数据来源、Token 预算、并发上限或合规边界，禁止空泛提问“安不安全”。</p>
+        <p><b>参考范例（质疑与回应）：</b><br>
+        • <b>甲方质疑：</b>“你们计划接入某商业论文全文库做 RAG，是否获得批量抓取与再分发授权？单月 500 名学生并发查询的 Token 费用谁承担？”<br>
+        • <b>乙方回应：</b>“改用馆藏公开元数据 + 摘要做本地索引（规避版权风险），同时在工作流前置规则关键词过滤，将大模型调用量削减 40%，单月预算控制在 50 元以内。”</p>
+      </details>
+    </div>
+
     <h3 class="sec-h" id="labgame">🎮 课堂互动小游戏 · 边玩边学</h3>
 <div style="border:1px solid #1c4a5a;border-radius:12px;overflow:hidden;margin:14px 0;background:#0E2F3A;">
   <iframe src="game_ch02.html" title="第2章 课堂互动小游戏" loading="lazy" style="width:100%;height:720px;border:0;display:block;"></iframe>

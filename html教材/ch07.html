@@ -503,6 +503,21 @@
       <p><b>交付：</b>费曼式讲清「为何复杂系统需要监督者」，录屏演示。</p>
     </div>
 
+    <h3 class="exp-h">🏛️ 名校对标进阶实验（选做，含操作要点与范例）</h3>
+    <div class="expext">
+      <h4>进阶实验 · 敏捷迭代看板与工作流故障注入<span class="tag">Berkeley CS169 · CMU 17-313</span></h4>
+      <p><b>目标：</b>将复杂工作流/多智能体开发纳入敏捷工程迭代，并验证系统在外部节点异常时的容错能力。</p>
+      <p><b>任务：</b>① 在 GitHub Issues/Projects 中将你的多智能体系统拆解为 4–6 个用户故事（User Stories），估算工作量（Story Points）并指派负责人；② 在工作流中人为注入 1 次节点故障（如模拟插件返回空值、JSON 解析失败或超时），设计“条件分支 + 降级兜底”并验证主流程不崩溃。</p>
+      <p><b>交付：</b>GitHub 迭代看板截图 + 故障注入与兜底分支测试录屏/截图。</p>
+      <details class="fold">
+        <summary>🛠 操作要点与参考范例</summary>
+        <p><b>操作要点：</b>① 每个 Issue 必须写明“验收条件（Acceptance Criteria）”；② 故障注入可通过在代码/HTTP 节点临时返回空字符串 <code>""</code> 或错误 JSON 来模拟，检查“异常分支”是否能给出友好提示而非直接报错中断。</p>
+        <p><b>参考范例（User Story &amp; 故障兜底）：</b><br>
+        • <b>Issue #4 [3 pts]：</b>“作为读者，我希望当联网搜索插件超时时，监督 Agent 自动切换为仅用本地知识库作答，并标注‘当前为离线知识库结果’。”<br>
+        • <b>工作流路由：</b><code>搜索节点</code> → <code>条件判断(status == ok &amp;&amp; len &gt; 0)</code> → 失败走 <code>降级节点(本地 RAG + 提示语)</code>。</p>
+      </details>
+    </div>
+
     <h3 class="sec-h" id="labgame">🎮 课堂互动小游戏 · 边玩边学</h3>
 <div style="border:1px solid #1c4a5a;border-radius:12px;overflow:hidden;margin:14px 0;background:#0E2F3A;">
   <iframe src="game_ch07.html" title="第7章 课堂互动小游戏" loading="lazy" style="width:100%;height:720px;border:0;display:block;"></iframe>

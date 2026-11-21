@@ -516,6 +516,23 @@
       <p data-page-node-id="bQEtBShXLPQdLOJqdavGb9"><b data-page-node-id="6HuANM9HAdB9bn2OCubRHq">交付：</b>录屏讲解「如何判断知识库够不够好」，给出改进项。</p>
     </div>
 
+    <h3 class="exp-h">🏛️ 名校对标进阶实验（选做，含操作要点与范例）</h3>
+    <div class="expext">
+      <h4>进阶实验 · 叙事文本到 3NF 数据字典与结构化/向量库对照<span class="tag">CMU 67-272</span></h4>
+      <p><b>目标：</b>打通传统关系型数据建模（ER + 3NF）与现代 RAG 知识库组织的底层逻辑，掌握“精确事实查表、模糊语义查向量”的混合知识架构。</p>
+      <p><b>任务：</b>针对一段业务叙事（如“高校档案借阅管理”或自选项目数据），① 绘制 ER 图并规范化至第三范式（3NF），编写核心字段数据字典；② 将同一批数据分别放入“结构化数据表（Coze Database / SQLite）”与“文本切片向量知识库（RAG）”，用 5 个典型问题（含统计计数、精确条件过滤、语义概括）对比两者的回答准确率。</p>
+      <p><b>交付：</b>ER 图 + 3NF 数据字典 + 5 题对照评测表。</p>
+      <details class="fold">
+        <summary>🛠 操作要点与参考范例</summary>
+        <p><b>操作要点：</b>① 检查数据字典是否包含“字段名、类型、主外键、非空约束、业务含义”；② 故意设计 2 道聚合/计数类问题（如“2021 年共有多少条热词？”），观察纯向量检索为何容易数错，而结构化查表能 100% 算准。</p>
+        <p><b>参考范例（对照评测片段）：</b><br>
+        • <b>测试题：</b>“统计分类为‘职场文化’且热度高于 80 的热词数量。”<br>
+        • <b>纯 RAG 向量库：</b>仅召回 Top-3 切片，漏数严重（准确率 40%）。<br>
+        • <b>结构化数据表（3NF）：</b>通过 SQL/工作流条件查询精确统计，准确率 100%。<br>
+        • <b>架构结论：</b>实体属性与统计类数据进 3NF 数据表，长文本解释进 RAG 知识库。</p>
+      </details>
+    </div>
+
     <h3 class="sec-h" id="labgame">🎮 课堂互动小游戏 · 边玩边学</h3>
 <div style="border:1px solid #1c4a5a;border-radius:12px;overflow:hidden;margin:14px 0;background:#0E2F3A;">
   <iframe src="game_ch05.html" title="第5章 课堂互动小游戏" loading="lazy" style="width:100%;height:720px;border:0;display:block;"></iframe>
