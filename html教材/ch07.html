@@ -84,83 +84,6 @@
       • <b>BPMN 条件与并行（Petri 网同步）</b>：收到会议议程后，系统<b>并行</b>派发 3 个“资料搜集”批处理分支抓取嘉宾简介；全部汇合（同步）后再交给撰写节点；<br>
       • <b>BPR 流程重组</b>：不是让人写完再让 AI 润色，而是直接让“核查 Agent”比对原文与初稿——若发现无出处数据，自动打回重做（闭环重试），把传统 2 小时的采编流程压缩到 3 分钟。
     </div>
-    <span class="mod mod-theory">理论可视化 · 信息系统相关图形（4 幅）</span>
-
-    <figure class="figure">
-      <svg viewBox="0 0 680 200" role="img" aria-label="业务逻辑节点家族">
-        <g font-size="12" fill="#0E2F3A" text-anchor="middle">
-          <rect x="20" y="40" width="120" height="54" rx="9" fill="#EAF4F6" stroke="#0F6E8C"/><text x="80" y="62">选择器</text><text x="80" y="80" font-size="10" fill="#5A6B73">条件分支</text>
-          <rect x="155" y="40" width="120" height="54" rx="9" fill="#EAF4F6" stroke="#0F6E8C"/><text x="215" y="62">批处理</text><text x="215" y="80" font-size="10" fill="#5A6B73">并行批量</text>
-          <rect x="290" y="40" width="120" height="54" rx="9" fill="#EAF4F6" stroke="#0F6E8C"/><text x="350" y="62">循环</text><text x="350" y="80" font-size="10" fill="#5A6B73">串行重复</text>
-          <rect x="425" y="40" width="120" height="54" rx="9" fill="#FDF3E3" stroke="#E0A82E"/><text x="485" y="62">代码节点</text><text x="485" y="80" font-size="10" fill="#5A6B73">JS/Python</text>
-          <rect x="560" y="40" width="110" height="54" rx="9" fill="#eaf7ef" stroke="#2E8B57"/><text x="615" y="62">变量聚合</text><text x="615" y="80" font-size="10" fill="#5A6B73">取首非空</text>
-        </g>
-      </svg>
-      <span class="cap"><b>图1</b>　业务逻辑节点家族（工作流进阶节点）</span>
-    </figure>
-
-    <figure class="figure">
-      <svg viewBox="0 0 680 220" role="img" aria-label="工作流嵌套">
-        <defs><marker id="m7b" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0F6E8C"/></marker></defs>
-        <g font-size="12" fill="#0E2F3A" text-anchor="middle">
-          <rect x="240" y="20" width="200" height="44" rx="9" fill="#FDF3E3" stroke="#E0A82E"/><text x="340" y="47">主工作流（调度+整合）</text>
-          <rect x="30" y="110" width="180" height="48" rx="9" fill="#EAF4F6" stroke="#0F6E8C"/><text x="120" y="135">子流 generate_article</text>
-          <rect x="250" y="110" width="180" height="48" rx="9" fill="#EAF4F6" stroke="#0F6E8C"/><text x="340" y="135">子流 adapt_content</text>
-          <rect x="470" y="110" width="180" height="48" rx="9" fill="#EAF4F6" stroke="#0F6E8C"/><text x="560" y="135">子流 text2image</text>
-        </g>
-        <g stroke="#0F6E8C" stroke-width="2" fill="none" marker-end="url(#m7b)">
-          <line x1="300" y1="64" x2="150" y2="108"/>
-          <line x1="340" y1="64" x2="340" y2="108"/>
-          <line x1="380" y1="64" x2="530" y2="108"/>
-        </g>
-        <text x="340" y="200" text-anchor="middle" font-size="11" fill="#5A6B73">子流须先发布，才能被主工作流嵌套调用</text>
-      </svg>
-      <span class="cap"><b>图2</b>　工作流嵌套：主工作流调度多个子工作流（模块化）</span>
-    </figure>
-
-    <figure class="figure">
-      <svg viewBox="0 0 680 230" role="img" aria-label="多Agent结构">
-        <defs><marker id="m7c" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#1497A8"/></marker></defs>
-        <g font-size="13" fill="#0E2F3A" text-anchor="middle">
-          <rect x="250" y="20" width="180" height="48" rx="9" fill="#FDF3E3" stroke="#E0A82E"/><text x="340" y="48">父 Agent（调度中心）</text>
-          <rect x="40" y="130" width="170" height="50" rx="9" fill="#EAF4F6" stroke="#0F6E8C"/><text x="125" y="160">子 Agent A</text>
-          <rect x="255" y="130" width="170" height="50" rx="9" fill="#EAF4F6" stroke="#0F6E8C"/><text x="340" y="160">子 Agent B</text>
-          <rect x="470" y="130" width="170" height="50" rx="9" fill="#EAF4F6" stroke="#0F6E8C"/><text x="555" y="160">子 Agent C</text>
-        </g>
-        <g stroke="#1497A8" stroke-width="2" fill="none" marker-end="url(#m7c)">
-          <line x1="300" y1="68" x2="150" y2="128"/>
-          <line x1="340" y1="68" x2="340" y2="128"/>
-          <line x1="380" y1="68" x2="530" y2="128"/>
-        </g>
-        <text x="125" y="205" font-size="11" fill="#5A6B73">订单查询</text>
-        <text x="340" y="205" font-size="11" fill="#5A6B73">促销咨询</text>
-        <text x="555" y="205" font-size="11" fill="#5A6B73">人工客服</text>
-      </svg>
-      <span class="cap"><b>图3</b>　多 Agent 结构：父 Agent 调度多个专长子 Agent</span>
-    </figure>
-
-    <figure class="figure">
-      <svg viewBox="0 0 680 300" role="img" aria-label="UML时序图多智能体">
-        <defs><marker id="m7d" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0F6E8C"/></marker></defs>
-        <g font-size="12" fill="#0E2F3A" text-anchor="middle">
-          <rect x="30" y="30" width="90" height="32" rx="6" fill="#EAF4F6" stroke="#0F6E8C"/><text x="75" y="51">用户</text>
-          <rect x="150" y="30" width="110" height="32" rx="6" fill="#FDF3E3" stroke="#E0A82E"/><text x="205" y="51">父 Agent</text>
-          <rect x="290" y="30" width="110" height="32" rx="6" fill="#EAF4F6" stroke="#0F6E8C"/><text x="345" y="51">子 Agent A</text>
-          <rect x="430" y="30" width="110" height="32" rx="6" fill="#EAF4F6" stroke="#0F6E8C"/><text x="485" y="51">子 Agent B</text>
-          <rect x="560" y="30" width="90" height="32" rx="6" fill="#fff" stroke="#0F6E8C"/><text x="605" y="51">工具</text>
-        </g>
-        <g stroke="#0F6E8C" stroke-width="1.5" fill="none" marker-end="url(#m7d)">
-          <line x1="120" y1="75" x2="203" y2="75"/><text x="160" y="69" font-size="11" fill="#5A6B73">请求</text>
-          <line x1="260" y1="105" x2="343" y2="105"/><text x="300" y="99" font-size="11" fill="#5A6B73">分派:订单</text>
-          <line x1="400" y1="135" x2="483" y2="135"/><text x="440" y="129" font-size="11" fill="#5A6B73">分派:促销</text>
-          <line x1="540" y1="165" x2="613" y2="165"/><text x="575" y="159" font-size="11" fill="#5A6B73">调用工具</text>
-          <line x1="540" y1="195" x2="613" y2="195"/><text x="575" y="189" font-size="11" fill="#5A6B73">结果</text>
-          <line x1="400" y1="225" x2="343" y2="225"/><text x="370" y="219" font-size="11" fill="#5A6B73">汇总 A</text>
-          <line x1="260" y1="255" x2="203" y2="255"/><text x="230" y="249" font-size="11" fill="#5A6B73">汇总 B</text>
-        </g>
-      </svg>
-      <span class="cap"><b>图4</b>　UML 时序图：多智能体协作（父调度、子调用工具、汇总回复）</span>
-    </figure>
 
           <div class="callout method" id="classicmap"><span class="m-tag">经典方法论对照 · 交互与架构</span><p>原版 ch12-13 的<b>顺序图/协作图</b>（刻画多智能体消息交互，H.4）、<b>SOLID/GoF</b>（指导 Agent 职责单一与可替换，H.5）、<b>面向服务设计</b>（"每个智能体 = 一个业务能力/微服务"，H.6）是理解多智能体编排的经典地基。把智能体互联网 IoA 拓扑画成协作图最直观。</p></div>
 
@@ -192,13 +115,14 @@
     <span class="src">来源：智学优课</span>
   </figcaption>
 </figure>
-<span class="mod mod-kb">前沿动态 · 行业速递（2026-08）</span>
+<span class="mod mod-kb">前沿动态 · 行业速递（2026-11）</span>
 <div class="callout frontier">
-  <span class="f-tag">动态更新 2026-08</span>
-  <p><b>1</b> 蚂蚁集团开源多智能体协作基础设施 Avernet（2026-08-07）：聚焦 agent 发现、共识、跨团队协作与治理（身份 / 权限 / 生命周期）。</p>
-  <p><b>2</b> agency-agents 框架 GitHub 单日 14.3 万 star（2026-08-11）：角色化 agent 团队，验证“组织化 AI 劳动力”需求。</p>
-  <p><b>3</b> SpaceXAI 发布 Grok Bot 多智能体协作工具（2026-08-11）；DeepMind 多智能体强化学习成果登《Science》（2026-08-12）；A2A 协议成熟。</p>
-  <p class="src">来源：搜狐 2026-08-07、Donews 2026-08-11、DeepMind / Science 2026-08-12、AI Daily</p>
+  <span class="f-tag">动态更新 2026-11</span>
+  <p><b>1｜双协议大一统与生态爆发：</b>MCP（连接工具/数据）与 A2A（连接智能体）已共同归入 Linux 基金会 Agentic AI Foundation（AAIF）。2026-07-28 发布的 MCP 新规范将核心协议升级为无状态并纳入企业级托管授权，截至 2026 年 10 月官方 MCP Registry 已收录 <b>40,965 个 Server</b>（单月激增 37%）；A2A 于 2026 年 4 月发布 v1.0 稳定版（引入加密签名 Agent Card 解决跨组织身份互信），8 月晋升 AAIF 成长阶段项目，获超 150 家云厂商与框架支持。</p>
+  <p><b>2｜三层生产级编排架构确立：</b>业界多智能体工程已形成清晰的三层分工——<b>LangGraph</b> 负责单系统内的有状态工作流循环，<b>MCP</b> 负责内部工具与知识库接入，<b>A2A</b> 负责跨团队或跨供应商边界的任务委派（如德勤内部审计多智能体系统通过 A2A 将税务、网安、供应链专项审计动态分派给领域专家 Agent）。</p>
+  <p><b>3｜多智能体基础设施与科研突破：</b>蚂蚁集团开源多智能体协作基础设施 Avernet（聚焦发现、共识、身份权限与生命周期治理）；角色化 Agent 团队框架（如 agency-agents）与多智能体协同平台（Grok Bot）快速普及；DeepMind 多智能体强化学习成果登上《Science》（2026-08），持续验证复杂博弈与协同规划上限。</p>
+  <p><b>4｜对系统设计的启示：</b>内部多步业务优先用“工作流引擎 + MCP”，仅当任务跨越组织边界或异构供应商时才引入 A2A 契约，避免过早分布式化带来调试灾难。</p>
+  <p class="src">来源：Linux Foundation AAIF / MCP &amp; A2A 2026 规范与生态统计（2026-10）、DeepMind / Science（2026-08）、蚂蚁 Avernet</p>
 </div>
 
 <span class="mod mod-ideo">精神坐标 · 人民日报金句</span>
@@ -530,11 +454,6 @@
       </details>
     </div>
 
-    <h3 class="sec-h" id="labgame">🎮 课堂互动小游戏 · 边玩边学</h3>
-<div style="border:1px solid #1c4a5a;border-radius:12px;overflow:hidden;margin:14px 0;background:#0E2F3A;">
-  <iframe src="game_ch07.html" title="第7章 课堂互动小游戏" loading="lazy" style="width:100%;height:720px;border:0;display:block;"></iframe>
-  <p style="margin:0;padding:10px 14px;font-size:13px;color:#9fc2cf;">提示：游戏需联网访问本站；若未显示，可<a href="game_ch07.html" target="_blank" rel="noopener" style="color:#E0A82E;">点此在新标签页打开</a>。</p>
-</div>
 <h2 class="part p4">第四部分　本章小结</h2>
       <h3 class="sec-h" id="sum">本章小结</h3>
     <div class="summary">
@@ -584,9 +503,6 @@
       <button class="btn ghost" id="markRead" data-ch="7">标记为已读</button>
     </div>
 
-    <div class="btnrow">
-      <a class="btn" href="game_ch07.html" target="_blank" rel="noopener">🎮 打开第 7 章互动游戏</a>
-    </div>
   </main>
 </div>
 
