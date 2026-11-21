@@ -79,6 +79,12 @@
       <div class="card" data-page-node-id="sBoDM8r3HhOkmBwJlywDxF"><b data-page-node-id="GFeIH2ozRm9SU15aoZa143">RAG</b> ↔ 外挂知识库弥补大模型参数化知识静态性</div>
       <div class="card" data-page-node-id="fyUtxUrNZRUxICAc7sQcG1"><b data-page-node-id="kHU3HCVjwNDXQPf0dYELDc">提示词工程=规格</b> ↔ 规范化需求→结构化提示→可靠召回</div>
     </div>
+    <p><b>映射解读：</b>大模型本身只记住了训练截止前的“通用常识”，对本单位的私有文件一无所知。<b>DIKW 与数据库范式</b>教我们如何把杂乱无章的文档清洗成高质量知识单元，而 <b>RAG + 提示词规则</b>则负责在提问瞬间把最准确的那几条知识递给模型。</p>
+    <div class="callout tip">
+      💡 <b>场景案例 · “网络流行语档案馆”如何体现 DIKW 与 RAG：</b><br>
+      • <b>Data → Information → Knowledge</b>：原始热词表只是一堆词（Data）；加上“2021 年出现、源于职场讨论”的语境就变成信息（Info）；再总结出“反映年轻人缓解焦虑的情绪转向”并支持对比分析，就成了知识（Knowledge）；<br>
+      • <b>规范化分库</b>：把“年份/热度数值”放进 3NF 结构化数据表（防计数出错），把“背景故事长文本”切分进向量知识库（RAG 语义召回），再用提示词规定“先查表后检索，必须附出处年份”。
+    </div>
     <span class="mod mod-theory" data-page-node-id="tZrZRDcxMZqaU20izXCjpB">理论可视化 · 信息系统相关图形（4 幅）</span>
 
     <figure class="figure" data-page-node-id="h8jDb1HV6PSRS0NK8Duuy3">

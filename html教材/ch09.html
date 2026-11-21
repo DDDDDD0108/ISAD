@@ -78,6 +78,12 @@
       <div class="card" data-page-node-id="ERQyfJf3WnEwC4AYpjDI2I"><b data-page-node-id="3uysyZPng9FLvGA7BGcioN">PMBOK / CPM</b> ↔ Capstone 进度规划与关键路径管理</div>
       <div class="card" data-page-node-id="rsCRsnnPKt35vgJnuVlmGK"><b data-page-node-id="iuwreVbtdjs4IAWtGdqcw4">运维与审计</b> ↔ 发布管理、日志监控与合规审计闭环</div>
     </div>
+    <p><b>映射解读：</b>智能体输出具有随机性，比传统软件更需要严格的“测试驱动（TDD）与灰度上线”。传统的<b>测试四级金字塔</b>与<b>系统转换策略</b>不仅完全适用，还演进出了智能体特有的“轨迹评测（看中间步骤调对了没有）”与“提示注入防线”。</p>
+    <div class="callout tip">
+      💡 <b>场景案例 · “教务选课答疑智能体”上线前的四级评测与试点切换：</b><br>
+      • <b>四级测试映射</b>：单元测（验证“学分计算插件”传参不报错）→ 集成测（知识库召回 + 插件联动轨迹是否正确）→ 系统测（50 条真实高频问题成功率 ≥ 92% 且能拦截“套取系统提示词”注入攻击）→ 验收测（请 10 名大一新生试问）；<br>
+      • <b>试点与并行转换</b>：选课周前 3 天，只在“信息资源管理学院”小范围试点，并与原有人工教务 QQ 群<b>并行运行</b>一周，确认日志监控无误后再全校放开。
+    </div>
     <span class="mod mod-theory" data-page-node-id="Rtx77DoY7NH1CJV2EiUWEc">理论可视化 · 信息系统相关图形（4 幅）</span>
 
     <figure class="figure" data-page-node-id="MzAlzr6BxPBVBXZZqmYF5K">

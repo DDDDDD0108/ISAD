@@ -168,6 +168,12 @@
       <div class="card" data-page-node-id="fxazWCligbsMl7BGsEtaTD"><b data-page-node-id="BEpIwx2gFF1HYI9q5xkH5s">OOD SOLID</b> ↔ 多智能体职责单一、依赖倒置、易替换</div>
       <div class="card" data-page-node-id="g43E06sxRlG4PoBQzSNmYP"><b data-page-node-id="qD3TNqZH9xviksAJqAXmTk">IPO</b> ↔ 感知(输入)—推理(处理)—行动(输出)</div>
     </div>
+    <p><b>映射解读：</b>总体设计的核心是<b>“分而治之”</b>。把所有指令都塞进一段 3000 字的提示词，就像把全部代码写在一个 <code>main()</code> 函数里，改一处全盘崩溃；按照高内聚低耦合原则把能力拆成“插件 + 工作流 + 知识库”，换掉其中一个插件不会影响主脑。</p>
+    <div class="callout tip">
+      💡 <b>场景案例 · “课程论文选题助手”的模块化架构演进：</b><br>
+      • <b>反面（紧耦合）</b>：只用一个大提示词，既要求它搜论文、又要它总结摘要、还要它按国标排版——结果经常漏掉参考文献格式；<br>
+      • <b>正面（SOLID 单一职责 + 事务分析）</b>：拆成 3 个低耦合模块——<code>学术检索插件</code>（只负责拉取文献元数据）、<code>选题评估子工作流</code>（只负责对比创新点）、<code>格式排版节点</code>（只负责输出 GB/T 7714 格式）。后续想把知网检索换成 arXiv 检索，只需替换第 1 个插件，其余节点零改动。
+    </div>
     <span class="mod mod-theory" data-page-node-id="w2AkKtHzvoJc8P8U1iAxfw">理论可视化 · 信息系统相关图形（4 幅）</span>
 
     <figure class="figure" data-page-node-id="bhfAuPtGlWZV4paGUqQurz">

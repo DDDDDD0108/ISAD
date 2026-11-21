@@ -107,6 +107,14 @@
       <div class="card" data-page-node-id="LkDxlmcCOyECqw1w7cDnRC"><b data-page-node-id="gBVe22mF8mODJ9gaHswqyf">行动</b> ↔ 输出/执行（报表、消息、写库）</div>
       <div class="card" data-page-node-id="Xa7oGoaIVtVCNzaS8x5F9N"><b data-page-node-id="GR4CGgpfSo3n7XSZDQ19TP">记忆</b> ↔ 数据存储/知识管理（数据库、知识库）</div>
     </div>
+    <p><b>为什么能这样映射？</b>传统信息系统把“人—机—数据”的协作拆成<b>采集、处理、输出、存储</b>四件事，而 LLM 智能体只是把“死板的表单输入”升级成“自然语言/多模态感知”，把“写死的 if-else 代码”升级成“大模型语义推理与规划”。四项核心职能一个都没少，只是载体更智能。</p>
+    <div class="callout tip">
+      💡 <b>场景案例 · 高校图书馆“智能体馆员”如何对应四大职能：</b><br>
+      ① <b>感知（输入采集）</b>：学生拍一张书架照片或语音问“《信息系统分析与设计》借完了吗？”——替代了过去必须手动在 OPAC 检索框输入精确书名；<br>
+      ② <b>记忆（数据存储）</b>：连接馆藏数据库与借阅规则知识库，记住当前用户的学院与借阅权限；<br>
+      ③ <b>认知推理（处理计算）</b>：判断“纸本已借出但有电子版可在线阅读，且有同主题替代书目”，完成推荐决策；<br>
+      ④ <b>行动（输出执行）</b>：向学生推送电子书直达链接，并调用预约插件自动登记纸本到书提醒。
+    </div>
     <span class="mod mod-theory" data-page-node-id="7ucUFy8dKHNo80ni7q5hKf">
     <span class="mod mod-theory" data-page-node-id="GD-T1">延伸 · 智能体理论基础（节选自权威指南 1.2）</span>
     <p>经典教材《人工智能：一种现代方法》(Russell &amp; Norvig, 1995) 把 AI 的目标定义为"构建<b>理性智能体</b>"：对每一个可能的感知序列，选择使预期效用最大的行动。在 LLM 时代，系统提示词"你是一个……助手"即定义了当前任务的效用边界——<b>指令即目标</b>；这解释了为什么"提示词写不清，智能体行为就混乱"。</p>
