@@ -294,6 +294,12 @@
       <li data-page-node-id="6GjctJOew2PF2zOgofKz16"><b data-page-node-id="CO5gF4x0A1f2eAs9J7j3L8">幻觉与合规</b>：核查知识库回答是否准确引用；缺失内容应明确说明而非编造。</li>
       <li data-page-node-id="hUsHzamMBVhfSg4AXjTNuA"><b data-page-node-id="Vj8qxGsJsHcLTwcAFOAlmc">回归测试</b>：变更后重新验证原有功能，保留测试用例集随版本回归。</li>
     </ul>
+    <div class="callout tip">
+      💡 <b>Anthropic（2026）Agent 评测工程三大核心原则：</b><br>
+      ① <b>轨迹（Transcript）vs 结果（Outcome）</b>：不要只看智能体“嘴上说完成了”，要核查数据库/环境状态是否真正改变；评测应同时覆盖过程轨迹与最终结果。<br>
+      ② <b>非确定性双指标</b>：<b>pass@k</b>（k 次尝试至少 1 次成功，测能力上限，适合创意/搜索）与 <b>pass^k</b>（k 次尝试全部成功，测稳定性，适合客服/交易生产系统）。<br>
+      ③ <b>三层评分器（Grader）与 AI 辅助测试</b>：确定性规则用<b>代码型</b>、语义判断用<b>模型型（需人工校准）</b>、黄金标准用<b>人工抽检</b>；此外可结合 LLM 单元测试生成与故障定位（Chu 等，2025；Wu 等，2023）提升测试效率。
+    </div>
 
     
     <div class="pptgrid" data-cnt="9" data-page-node-id="Ww9IqDy21KaAz3Xit9XFTb">
@@ -462,7 +468,7 @@
     <span class="mod mod-kb" data-page-node-id="0xbXQBr9Hg70wylsxw1pNL">拓展 · 智能体评测方法论</span>
     <p data-page-node-id="vwzwrTNiE882kzlO4ybqTg">为何难评：输出概率性、路径多样、多步工具调用。维度：任务成功率、步骤效率、工具调用正确性、成本与时延。方法：可复现任务集 + 端到端评估 + 轨迹分析；LLM-as-Judge 与人工抽检结合。评测应贯穿全周期：单元→集成→端到端。</p>
     <span class="mod mod-kb" data-page-node-id="qcsmtDYjelwhq1Z2n6aBFa">前沿 · 智能体安全与防护</span>
-    <p data-page-node-id="3GVXGl2RoER7Em1PGe7C9n">自主性↑→可靠性↓，需主动护栏；权限最小化并持续审查 Agent 权限；高风险/敏感决策保留人工兜底；面向"智能威胁时代"重建网络抵抗力（安全左移、设计即安全）。</p>
+    <p data-page-node-id="3GVXGl2RoER7Em1PGe7C9n">自主性↑→可靠性↓，需主动护栏；权限最小化并持续审查 Agent 权限；高风险/敏感决策保留人工兜底；面向"智能威胁时代"重建网络抵抗力（安全左移、设计即安全）。<b>警惕间接提示注入（Indirect Prompt Injection，Greshake 等，2023）</b>：攻击者无需直接对话，只要在智能体可能检索的网页、文档或邮件中埋入恶意指令，就能模糊“数据”与“指令”的边界，诱导智能体窃取数据或误调 API——这意味着<b>外部知识库入库前也必须做安全清洗与来源审计</b>。</p>
     <span class="mod mod-kb" data-page-node-id="zGHScX5z2vvoxeFTeo9EKx">案例 · 企业级智能体快速落地路径</span>
     <p data-page-node-id="ATUXQJnA8Gzwdu3VuEdl9E">选场景（高频、规则清晰、价值可量化）→ 搭原型（低代码+知识库+工作流）→ 设护栏（权限/审计/复核/重试）→ 上生产（灰度→监控→数据回流迭代）。</p>
     <div class="callout src" data-page-node-id="Vg8GhyybPUDScE9uXjTvAk">📚 来源：ima 知识库《智能体宇宙》《AI前沿研究报告》（Anthropic 评测、2026 安全设计相关报告）。</div>

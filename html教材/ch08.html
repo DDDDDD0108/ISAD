@@ -213,6 +213,7 @@
         <tr><td>形态</td><td>功能相对单一的 AI 伙伴</td><td>产品化的完整 AI 应用</td></tr>
       </tbody>
     </table>
+    <p><b>范式跃迁（从“低代码”到“无代码”）：</b>Hagel 等（2024）与国内产业实践（如美团 NoCode、百度秒哒多智能体无代码平台，已生成超 50 万个应用）表明，大模型正把可视化拖拽的“低代码”进一步推向“自然语言描述即生成全栈应用”的无代码新阶段。</p>
 
     
     <div class="pptgrid" data-cnt="31">
@@ -390,12 +391,13 @@
 
       <h3 class="sec-h" id="s84">8.4　AI 编程模式：描述即开发</h3>
     <p>① <b>自然语言描述</b>：像点菜下单，AI 几分钟生成完整项目（需求五要素：功能/界面/输入/输出/特殊要求）；② <b>生成→调试→部署</b>：描述—预览—对话修正闭环，产物是代码文件可实时编辑；③ <b>技能与集成服务</b>：Skill=可见工具，集成服务=底层实现（模型/数据库/存储/搜索）；④ <b>版本控制</b>：每次对话修改自动生成历史版本，可回滚；⑤ <b>开发环境</b>：Web 云端 IDE（代码编辑器/终端/沙箱）。局限：需求描述依赖强、复杂项目需拆解——建议从低代码入手再过渡。</p>
+    <p><b>方法学重构：</b>周庆山等（2024）指出，AI 编程助手并非仅加速编码，而是从方法学层面重构了需求转化、设计与验证链路；White 等（2023）总结的软件设计/重构/需求获取提示模式库可作为描述规范的复用基线。</p>
 
     
     
 
       <h3 class="sec-h" id="s85">8.5　低代码应用实战要点</h3>
-    <p>数据绑定：组件内容绑定工作流返回变量；"数据"选项卡新建界面变量解决跨页面传参。组件库：基础/输入/展示/AI 对话组件。预览调试闭环：预览→时间线追事件→"试运行"验证工作流。多端发布：单击发布到商店/小程序/Web。常见坑：模型下线改新版；页面直接调工作流拿不到参数（改用界面变量绑定）。</p>
+    <p>数据绑定：组件内容绑定工作流返回变量；"数据"选项卡新建界面变量解决跨页面传参。组件库：基础/输入/展示/AI 对话组件。预览调试闭环：预览→时间线追事件→"试运行"验证工作流。多端发布：单击发布到商店/小程序/Web。常见坑：模型下线改新版；页面直接调工作流拿不到参数（改用界面变量绑定）。<b>适用性边界（Käss 等，2023；李广建等，2025；张兴旺等，2024）</b>：低代码虽大幅降低开发门槛，但在复杂业务逻辑、长期可维护性、跨平台可移植性与防厂商锁定上仍存在边界，核心系统仍须保留规范代码与接口治理。</p>
 
           
 
@@ -434,8 +436,8 @@
     <p>以下文献反映本章主题在智能体时代的最新进展，供学有余力的同学延伸阅读（链接指向原文/预印本）。</p>
           <div class="callout src">🎓 <b>学界观点</b>：李广建等（2025）讨论了低代码平台在信息服务机构应用系统开发中的适用性；张兴旺等（2024）指出无代码 / 低代码的范式价值与固有局限。这说明：低代码是软件工程的“新质生产力”，但发布仍须纳入版本与变更治理。</div>
 <ul class="lit-list">
-      <li><a href="https://www.connectedpapers.com/main/ba71fb0fa68ab7d566dd4bbc6ab27efe7a1ff4a9/Using-ChatGPT-in-Software-Requirements-Engineering%3A-A-Comprehensive-Review/graph" target="_blank" rel="noopener">ChatGPT 提示词模式：提升代码质量、重构与软件设计（ChatGPT Prompt Patterns for Improving Code Quality, Refactoring, Requirements Elicitation, and Software Design）</a>
-        <div class="lit-meta">White et al., 2023, Springer</div>
+      <li><a href="https://arxiv.org/abs/2303.07839" target="_blank" rel="noopener">ChatGPT 提示词模式：提升代码质量、重构与软件设计（ChatGPT Prompt Patterns for Improving Code Quality, Refactoring, Requirements Elicitation, and Software Design）</a>
+        <div class="lit-meta">White et al., 2023, arXiv:2303.07839 / Springer</div>
         <div class="lit-note">提示词模式提升代码质量/重构/设计</div></li>
 
       <li><a href="https://finance.sina.cn/2025-05-30/detail-ineyipfa8707225.d.html" target="_blank" rel="noopener">美团 NoCode：对话式 AI 编程智能体（Meituan NoCode: A Conversational AI Coding Agent）</a>

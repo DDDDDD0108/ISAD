@@ -314,6 +314,11 @@
 
       <h3 class="sec-h" id="s73">7.3　多 Agent 模式</h3>
     <p><b>父 Agent</b>：调度中心，按各子 Agent"适用场景"分发，保留全局配置；不满足时回退父 Agent。<b>子 Agent A/B/C</b>：各具专长（订单/促销/人工），独立提示词与技能。<b>跳转机制</b>：输入满足某 Agent 触发条件即移交（如含"人工/投诉"跳转人工客服）。适用于智能客服、深度报告、虚拟公司等。</p>
+    <div class="callout tip">
+      💡 <b>多智能体两大经典工程范式对照（MetaGPT vs AutoGen）：</b><br>
+      • <b>MetaGPT（流程驱动 SOP 流水线，ICLR 2024）</b>：把软件公司标准作业流程（SOP）编码为提示序列，由产品经理/架构师/工程师/QA 接力，每个角色对中间产物做领域校验，有效抑制级联幻觉（同类代表还有 <b>ChatDev</b>）。<br>
+      • <b>AutoGen（对话驱动协作，2023/2024）</b>：让可定制、可接工具的多个智能体通过彼此对话自主推进任务（早期代表为 <b>CAMEL</b> 角色扮演框架）。<b>选型原则</b>：步骤规范、容错要求高选 SOP 流水线；开放探索、需多方协商选对话驱动。
+    </div>
 
     
     <div class="pptgrid" data-cnt="9">
@@ -416,7 +421,7 @@
 
 <span class="mod mod-kb" id="lit">前沿文献 · 近三年精选（2023–2026）</span>
     <p>以下文献反映本章主题在智能体时代的最新进展，供学有余力的同学延伸阅读（链接指向原文/预印本）。</p>
-          <div class="callout src">🎓 <b>学界观点</b>：储节旺等（2025）刻画了智能体在智慧图书馆中的应用框架与场景；蒲云强等（2026）构建面向科技战略情报的多智能体协同系统。这恰是本章“多智能体 = 组织化工作流”的学界注脚。</div>
+          <div class="callout src">🎓 <b>学界观点</b>：储节旺等（2025）与付芸等（2024）解构了智慧图书馆与情报智能体的能力框架；刘细文等（2024）指出情报智能体正成为面向“十五五”的科技情报工作新范式；蒲云强等（2026）、吴田等（2026）构建了面向科研与科技战略情报的多智能体协同系统。这恰是本章“多智能体 = 组织化工作流”在本专业领域的学界注脚。</div>
 <ul class="lit-list">
       <li><a href="https://arxiv.org/abs/2308.08155" target="_blank" rel="noopener">AutoGen：通过多智能体对话赋能下一代 LLM 应用（AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation）</a>
         <div class="lit-meta">Wu et al., 2023, arXiv:2308.08155</div>
